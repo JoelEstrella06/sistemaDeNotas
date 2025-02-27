@@ -31,9 +31,9 @@
                     </div>
                 </header>
             @endif
-
+            <x-alert/>
             <!-- Page Content -->
-            <main>
+            <main class="max-w-7xl m-auto pt-7 pb-5 px-2 sm:px-0">
                 {{ $slot }}
             </main>
         </div>
