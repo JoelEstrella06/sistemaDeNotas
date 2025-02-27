@@ -1,9 +1,15 @@
 <?php
 
+use App\Http\Controllers\TrabajosController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    if (Auth::check()) {
+        return to_route('dashboard');
+    } else {
+        return to_route('login');
+    }
 });
 
 Route::middleware([
@@ -14,4 +20,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::controller(TrabajosController::class)->group(function(){
+        Route::get('trabajos/','index')->name('trabajos');
+    });
 });
