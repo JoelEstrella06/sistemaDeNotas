@@ -1,3 +1,5 @@
-@props(['disabled' => false])
+@props(['name'])
 
-<input {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']) !!}>
+<input name="{{ $name }}" {{$attributes->merge(['class'=>'border border-gray-400 px-2 py-1 rounded-lg'])}}>
+
+<x-error for="{{$name}}"/>
