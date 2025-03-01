@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RemisionController;
 use App\Http\Controllers\TrabajosController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,5 +23,9 @@ Route::middleware([
     })->name('dashboard');
     Route::controller(TrabajosController::class)->group(function(){
         Route::get('trabajos/','index')->name('trabajos');
+    });
+    Route::controller(RemisionController::class)->group(function(){
+        Route::get('remision/','index')->name('remision');
+        Route::get('remision/create','create')->name('remision.create');
     });
 });
