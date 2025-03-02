@@ -16,6 +16,7 @@
         <x-slot name="head">
             <tr>
                 <th>Puesto</th>
+                <th>Costo</th>
                 <th></th>
             </tr>
         </x-slot>
@@ -23,7 +24,8 @@
             @forelse ($this->trabajos as $trabajo)
                 <x-table.table-body-row wire:key="arc_{{$trabajo->id}}" wire:loading.remove>
                     <x-table.table-body-cell label="Trabajo"><span>{{$trabajo->title}}</span></x-table.table-body-cell>
-                    <x-table.table-body-cell label="Trabajo">
+                    <x-table.table-body-cell label="Costo"><span>${{number_format($trabajo->precio,2)}}</span></x-table.table-body-cell>
+                    <x-table.table-body-cell>
                         <x-menu-options >
                             <livewire:trabajos.edit-trabajo-component :id="$trabajo->id" :key="'edit_'.$trabajo->id"/>
                         </x-menu-options>
