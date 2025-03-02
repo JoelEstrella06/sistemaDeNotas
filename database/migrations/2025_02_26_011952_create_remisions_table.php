@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('remisions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('num_unidad');
-            $table->string('comentario');
+            $table->string('num_unidad',100);
+            $table->string('comentario')->nullable();
             //$table->float('total',2);
             $table->string('pdf')->nullable();
             $table->softDeletes();
