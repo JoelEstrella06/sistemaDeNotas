@@ -1,7 +1,7 @@
 <x-modal-center :button_close=false tittle="Nuevo trabajo" required_inputs dropdown>
     <x-slot name="btn_open">
         <div class="flex gap-2 items-center" title="Editar trabajo" wire:click="trabajoData()">
-            <x-icons.edit class="size-4" />
+            <x-icons.edit class="size-5" />
             <span class="block">Editar</span>
         </div>
     </x-slot>
