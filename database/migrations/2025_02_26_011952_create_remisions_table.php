@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('num_unidad');
             $table->string('comentario');
-            $table->float('total',2);
-            $table->string('pdf');
+            //$table->float('total',2);
+            $table->string('pdf')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
